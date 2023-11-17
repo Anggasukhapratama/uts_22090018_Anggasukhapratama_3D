@@ -1,0 +1,619 @@
+/* Mengimpor font "Poppins" dengan berbagai bobot (weight) untuk gaya yang berbeda. */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+
+/* Menentukan beberapa variabel CSS untuk warna, bayangan (shadow), dan border, memudahkan pemeliharaan dan modifikasi nilai-nilai ini di seluruh stylesheet. */
+:root {
+  --green: #16a085;
+  --black: #444;
+  --light-color: #777;
+  --box-shadow: 0.5em 0.5rem 0 rgba(22, 160, 133, 0.2);
+  --text-shadow: 0.4em 0.4rem 0 rgba(0, 0, 0, 0.2);
+  --border: 0.2rem solid var(--green);
+}
+
+/* Mereset gaya default */
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  /* overflow: hidden; */
+  /* Hapus baris ini untuk mengaktifkan scrolling */
+  scroll-padding-top: 7rem;
+}
+
+section {
+  padding: 2rem 9%;
+}
+
+section:nth-child(even) {
+  background: #ffffff;
+}
+.heading {
+  text-align: center;
+  padding-bottom: 2rem;
+  line-height: 1.8;
+  text-shadow: 0.5rem 0.3rem 0 rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  color: var(--black); 
+  font-size: 5rem;
+  letter-spacing: 0.4rem;
+}
+
+.heading span {
+  text-transform: uppercase;
+  line-height: 1.8;
+  text-align: center; 
+  color: var(--green);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--green);
+  padding: 0.5rem 1rem;
+  border: 0.2rem solid var(--green);
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+  font-size: 1.7rem;
+  position: relative;
+  transition: all 0.2s ease-out;
+}
+
+.btn span {
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--green);
+  color: #ffffff;
+  margin: 0.5rem;
+  transition: all 0.2s ease-out;
+}
+
+.btn:hover {
+  background: var(--green);
+  color: #ffffff;
+}
+
+.btn:hover span {
+  color: var(--green);
+  background-color: #ffffff;
+  margin-left: 1rem;
+}
+
+.btn:active {
+  background: var(--green);
+  border-color: var(--green);
+  color: #ffffff;
+}
+
+.header {
+  padding: 2rem 9%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff; /* Change the background color to white */
+}
+
+.header .logo {
+  font-size: 2.5rem;
+  color: var(--black); /* Change to black */
+}
+
+.header .logo i {
+  color: var(--green);
+}
+
+.header .navbar a {
+  font-size: 1.7rem;
+  color: var(--light-color);
+  margin-left: 2rem;
+}
+
+.header .navbar a:hover {
+  color: var(--green);
+}
+
+#menu-btn {
+  font-size: 2.5rem;
+  border-radius: 0.5rem;
+  background: #eee;
+  color: var(--green);
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+#close-btn {
+  font-size: 2.5rem;
+  border-radius: 0.5rem;
+  background: #eee;
+  color: var(--green);
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  display: none; /* Hide the close button when inactive */
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-top: 10rem;
+}
+
+.home .content {
+  flex: 1 1 45rem;
+}
+
+.home .content h3 {
+  font-size: 3.5rem;
+  color: var(--black);
+  line-height: 1.8;
+  text-shadow: 0.5rem 0.3rem 0 rgba(0, 0, 0, 0.2);
+}
+
+.home .content p {
+  font-size: 1.2rem;
+  color: var(--light-color);
+  line-height: 1.8;
+  padding: 1rem 0;
+}
+
+.icons-container {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.icons-container .icons {
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+  border-radius: 0.5rem;
+  text-align: center;
+  padding: 2.5rem;
+}
+
+.icons-container .icons i {
+  font-size: 4.5rem;
+  color: var(--green);
+  padding-bottom: 0.7rem;
+}
+
+.icons-container .icons h3 {
+  font-size: 4.5rem;
+  color: var(--green);
+  padding-bottom: 0.7rem;
+}
+
+.services .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 3rem;
+}
+
+.services .box-container .box {
+  background: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  border: var(--border);
+  padding: 2.5rem;
+}
+
+.services .box-container .box i {
+  color: var(--green);
+  font-size: 5rem;
+}
+
+.services .box-container .box h3 {
+  color: var(--black);
+  font-size: 2.5rem;
+  padding: 1rem 0;
+}
+
+.services .box-container .box p {
+  color: var(--black);
+  font-size: 1.5rem;
+  line-height: 2;
+}
+.services .box-container .box .btn {
+  display: inline-block;
+  color: var(--green);
+  padding: 0.4rem 0.8rem;
+  border: 0.2rem solid var(--green);
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  font-size: 1.4rem;
+  position: relative;
+  transition: all 0.2s ease-out;
+  margin-top: 1rem;
+  
+}
+.services .box-container .box .btn:hover {
+  background: var(--green);
+  color: #ffffff;
+}
+.about {
+  background: #ffffff;
+}
+
+.about .row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.about .row .image {
+  flex: 1 1 45rem;
+}
+
+.about .row .image img {
+  width: 100%;
+}
+
+.about .row .content {
+  flex: 1 1 45rem;
+}
+
+.about .row .content h3 {
+  color: var(--black);
+  text-shadow: 0.5rem 0.3rem 0 rgba(0, 0, 0, 0.2);
+  font-size: 4rem;
+  line-height: 1.8;
+}
+
+.about .row .content p {
+  color: var(--black);
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  line-height: 1.8;
+}
+.doctors .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 3rem;
+  padding: 2rem 5%;
+}
+
+.doctors .box {
+  background: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  border: 0.1rem solid var(--green);
+  padding: 2.5rem;
+  position: relative;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.doctors .box img {
+  width: 100%;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.doctors .box h3 {
+  color: var(--black);
+  font-size: 2.5rem;
+  padding: 1rem 0;
+}
+
+.doctors .box span {
+  color: var(--green);
+  font-size: 1.5rem;
+  padding: 0.5rem 0;
+}
+
+.doctors .box .share {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  
+}
+
+.doctors .box .share a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--green);
+  font-size: 2.5rem;
+  margin: 0 0.5rem;
+  border: 0.1rem solid var(--green);
+  border-radius: 0.5rem; /* Mengubah bentuk ikon menjadi kotak dengan sudut melengkung */
+  padding: 1rem; /* Memberikan ruang di sekitar ikon */
+  transition: all 0.3s; /* Animasi transisi saat di-hover */
+  position: relative;
+}
+
+.doctors .box .share a:hover {
+  color: #ffffff;
+  background-color: #16a085; 
+  box-shadow: var(--box-shadow);/* Mengubah warna latar belakang saat di-hover */
+}
+.book .row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.book .row .image {
+  flex: 1 1 40%;
+}
+
+.book .row .image img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.book .row form {
+  flex: 1 1 40%;
+  background: #fff;
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.book .row form h3 {
+  color: var(--black);
+  padding-bottom: 1rem;
+  font-size: 3rem;
+}
+
+.book .row form .box {
+  width: 100%;
+  margin: 0.7rem 0;
+  border-radius: 0.5rem;
+  border: var(--border);
+  font-size: 1.6rem;
+  color: var(--black);
+  text-transform: none;
+  padding: 1rem;
+}
+.blogs .box-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.blogs .box {
+  flex: 0 1 calc(33.33% - 2rem);
+  background: #ffffff;
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+/* Gaya responsif untuk layar kecil */
+@media (max-width: 991px) {
+  .blogs .box {
+    flex: 0 1 calc(100% - 2rem);
+  }
+}
+/* Penyesuaian untuk layar hingga lebar 991px */
+@media (max-width: 767px) {
+  .blogs .box {
+    padding: 1.5rem;
+  }
+}
+.blogs .box .image {
+  width: 100%;
+  height: 20rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.blogs .box .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blogs .box .content {
+  padding: 2rem 0;
+}
+
+.blogs .box .content h3 {
+  color: var(--black);
+  font-size: 1.8rem;
+  padding: 1rem 0;
+}
+
+.blogs .box .content p {
+  color: var(--black);
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.blogs .box .content .icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.blogs .box .content .icon a {
+  color: var(--black);
+  font-size: 1.2rem;
+}
+
+.blogs .box .content .icon a i {
+  padding-right: 0.5rem;
+}
+
+
+.blogs .box .content .btn {
+  display: inline-block;
+  color: var(--green);
+  padding: 0.4rem 0.8rem;
+  border: 0.2rem solid var(--green);
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  font-size: 1.4rem;
+  position: relative;
+  transition: all 0.2s ease-out;
+  margin-top: 1rem;
+}
+@media (max-width: 767px) {
+  .blogs .box .content .btn {
+    font-size: 1.2rem;
+  }
+
+.blogs .box .content .btn span {
+  border-radius: 0.5rem;
+  background: var(--green);
+  color: #ffffff;
+  margin: 0.5rem;
+  transition: all 0.2s ease-out;
+  padding: 0.5rem 0.7rem;
+  
+}
+}
+.blogs .box .content .btn:hover {
+  background: var(--green);
+  color: #ffffff;
+}
+
+.blogs .box .content .btn:hover span {
+  color: var(--green);
+  background-color: #ffffff;
+  margin-left: 1rem;
+}
+
+.blogs .box .content .btn:active {
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--black);
+}
+
+.footer {
+  background: #fff;
+  color: var(--green);
+  padding: 4rem 9%;
+  
+}
+
+@media (max-width: 767px) {
+  .footer {
+    padding: 4rem 2rem;
+  }
+}
+.box-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+  
+}
+@media (max-width: 767px) {
+  .box-container {
+    flex-direction: column;
+    text-align: center;
+  }
+.box {
+  flex: 0 1 calc(33.33% - 2rem);
+}
+}
+.box h3 {
+  color: var(--green);
+  font-size: 2.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.box a {
+  color: var(--green);
+  display: block;
+  padding: 1rem 0;
+  transition: all 0.3s;
+}
+
+.box a:hover {
+  color: #fff;
+}
+
+.Credit {
+  text-align: center;
+  padding-top: 4rem;
+  color:var(--green);
+  font-size: 1.5rem;
+}
+
+.Credit span {
+  color: var(--gree);
+  font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  .header {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-btn {
+    display: initial;
+  }
+  .header .navbar {
+    position: absolute;
+    top: 115%;
+    right: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    width: 30rem;
+    border: var(--border);
+    background: #ffffff;
+    transform: scale(0);
+    opacity: 0;
+    transform-origin: top right;
+    transition: all 0.2s ease-out;
+  }
+  .header .navbar.active {
+    transform: scale(1);
+    opacity: 1;
+  }
+  .header .navbar a {
+    font-size: 2rem;
+    display: block;
+    margin: 2.5rem;
+    transition: all 0.2s ease-out;
+  }
+}
